@@ -69,32 +69,42 @@
      - [ ] PROGRAM filter to accept only numbers (of seconds)
      - [ ] PROGRAM TIMER followed by Chronometer
      - [ ] PROGRAM Sound at end of timer before starting chronometer
+     - [ ] REFACTOR CODE
 
   6. [ ] Full Screen activity
      - [ ] ADD an activity to the application, where the time (timer or chronometer is shown full screen)
      - [ ] ADD BUTTON to go Full Screen
      - [ ] DETECT pressure of back button to go back to the main screen, without stopping the time running.
+     - [ ] REFACTOR CODE
 
-  7. [ ] lexicographic parser
-     - [ ] IMPLEMENT simple programming language for MultiTimer:
-       - [ ] C :: Chronometer
-       - [ ] T(X) :: Timer for X minutes
-       - [ ] T(X:Y) :: Timer for X minutes and Y seconds
-       - [ ] B :: play Bell sound
-       - [ ] P :: wait for pression on the screen
-       - [ ] (P)^N :: repeat program P N times 
-       - [ ] (P)^* :: repeat program P until interrupted by button PAUSE, or RESET
+  7. [ ] Simple Parser
+     - [ ] C :: Chronometer
+     - [ ] T(X) :: Timer for X minutes
+     - [ ] T(X:Y) :: Timer for X minutes and Y seconds
+     - [ ] B :: play Bell sound
+     - [ ] P :: wait for pression on the screen
+     - [ ] REFACTOR CODE
 
-  8. [ ] Memory of previous programs
+  8. [ ] Complex Display  
+     - [ ] REPROGRAM both full screen and menu display to be able to show up to 3 running times at once
+     - [ ] (P)^N :: repeat program P N times 
+     - [ ] (P)^* :: repeat program P until interrupted by button PAUSE, or RESET
+     - [ ] (P+P'+P''+...) :: execute all programs in parallel, stopping as soon as one of them terminates
+     - [ ] REFACTOR CODE
+
+  9. [ ] Memory of previous programs
      - [ ] DISPLAY last 2 programs used
      - [ ] CREATE additional activity displaying the list of all programs used, ordered by time since last usage.
+     - [ ] REFACTOR CODE
 
-  9. [ ] Frequency Memory of previous programs
-     - [ ] DISPLAY 2 programs most frequently used since instalation of the application (!! Requires memory)
-     - [ ] CREATE additional activity displaying the list of all programs used, ordered by frequency of usage.
+  10. [ ] Frequency Memory of previous programs
+      - [ ] DISPLAY 2 programs most frequently used since instalation of the application (!! Requires memory)
+      - [ ] CREATE additional activity displaying the list of all programs used, ordered by frequency of usage.
+      - [ ] REFACTOR CODE
 
-  10. [ ] Clever memory of previous programs
+  11. [ ] Clever memory of previous programs
       - [ ] DISPLAY 3 most interesting programs, as measured by fisheye order combination of frequency and time since last usage.
       - [ ] CREATE additional activity displaying 10 top programs by this order 
+      - [ ] REFACTOR CODE
 
 
