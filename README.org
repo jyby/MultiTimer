@@ -1,0 +1,100 @@
+#+TITLE: MultiTimer
+#+DESCRIPTION: A timer under Android, which allows to program a sequence of Timers, Chronometer, Bell,  and Pauses
+#+AUTHOR: Jérémy Barbay
+#+EMAIL: jeremy@barbay.cl
+#+CATEGORY: Tools 
+
+* Introduction
+
+  When doing a presentation for a course, it is useful to have a timer showing the time left. There are several timer applications in the Android Market, but quite few which allow a full screen timer. This seems like a good candidate of a first application for students to learn how to program for Android: it is simple and they can test and evaluate themselves the result.
+
+* Features
+   - A user program the multi-timer using the following vocabulary and grammar:
+     - [ ] C :: Chronometer
+     - [ ] T(X) :: Timer for X minutes
+     - [ ] T(X:Y) :: Timer for X minutes and Y seconds
+     - [ ] B :: play Bell sound
+     - [ ] P :: wait for pression on the screen
+     - [ ] (P)^N :: repeat program P N times 
+     - [ ] (P)^* :: repeat program P until interrupted by button PAUSE, or RESET
+     - [ ] (P+P'+P''+...) :: execute all programs in parallel, stopping as soon as one of them terminates
+
+* Examples of Usage
+
+** Student presenting
+   - Student Bob is presenting his project:
+   - Each student is alloted
+     - 1 mn of preparation
+     - 5 mns of presentation
+     - 4mns of questions
+   - He is programming his multi-timer with the following program:
+     #+BEGIN_SRC 
+     T(1)BT(5)(C+P+T(4))
+     #+END_SRC
+** Professor evaluating several presentations
+   - Professor Alice is evaluating the presentations of 6 students.
+   - Each student is alloted
+     - 1 mn of preparation
+     - 5 mns of presentation
+     - 4mns of questions
+   - Professor Alice program her multi-timer with the following program:
+     #+BEGIN_SRC 
+     (T(1)T(5)B(C+P+T(4))B)^6
+     #+END_SRC
+
+* Milestones
+
+  1. [ ] Initial Setup
+     1. [ ] PROGRAM a simple application showing the text text ("Hello World by $AUTHOR")
+     2. [ ] COMPILE
+     3. [ ] COPY to a mobile device
+     
+  2. [ ] Test the interface
+     1. [ ] PRINT "Hello World" and "by $AUTHOR" in distinct colors
+     2. [ ] DETECT pressure on "by $AUTHOR"
+     3. [ ] PLAY sound on an event (back button)
+     
+  3. [ ] Simplistic Chronometer:
+     - [ ] Modify the application to display time since the application was launched, in full screen.
+     - [ ] REFACTOR CODE
+
+  4. [ ] Buttons:
+     - [ ] ADD a button which starts the chronometer
+     - [ ] ADD a button which pauses the chronometer
+     - [ ] ADD a button which resets the chronometer
+     - [ ] REFACTOR CODE
+
+  5. [ ] Simple Timer + Chronometer:
+     - [ ] ADD a field to enter text
+     - [ ] PROGRAM filter to accept only numbers (of seconds)
+     - [ ] PROGRAM TIMER followed by Chronometer
+     - [ ] PROGRAM Sound at end of timer before starting chronometer
+
+  6. [ ] Full Screen activity
+     - [ ] ADD an activity to the application, where the time (timer or chronometer is shown full screen)
+     - [ ] ADD BUTTON to go Full Screen
+     - [ ] DETECT pressure of back button to go back to the main screen, without stopping the time running.
+
+  7. [ ] lexicographic parser
+     - [ ] IMPLEMENT simple programming language for MultiTimer:
+       - [ ] C :: Chronometer
+       - [ ] T(X) :: Timer for X minutes
+       - [ ] T(X:Y) :: Timer for X minutes and Y seconds
+       - [ ] B :: play Bell sound
+       - [ ] P :: wait for pression on the screen
+       - [ ] (P)^N :: repeat program P N times 
+       - [ ] (P)^* :: repeat program P until interrupted by button PAUSE, or RESET
+
+  8. [ ] Memory of previous programs
+     - [ ] DISPLAY last 2 programs used
+     - [ ] CREATE additional activity displaying the list of all programs used, ordered by time since last usage.
+
+  9. [ ] Frequency Memory of previous programs
+     - [ ] DISPLAY 2 programs most frequently used since instalation of the application (!! Requires memory)
+     - [ ] CREATE additional activity displaying the list of all programs used, ordered by frequency of usage.
+
+  10. [ ] Clever memory of previous programs
+      - [ ] DISPLAY 3 most interesting programs, as measured by fisheye order combination of frequency and time since last usage.
+      - [ ] CREATE additional activity displaying 10 top programs by this order 
+
+
